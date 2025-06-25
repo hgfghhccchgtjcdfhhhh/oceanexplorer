@@ -233,27 +233,43 @@ const realConservationTipsData: InsertConservationTip[] = [
 const realResearchPapersData: InsertResearchPaper[] = [
   {
     title: "New Deep-Sea Species Discovered in Mariana Trench",
-    summary: "Scientists discover 30+ new species in the deepest part of Earth's oceans, including unique glass sponges and xenophyophores.",
-    source: "Deep Sea Research Journal",
+    summary: "Scientists have identified three new species of amphipods living at depths exceeding 10,000 meters, expanding our understanding of life in Earth's deepest places.",
+    source: "Nature Ocean Science",
     publishDate: new Date("2024-01-15"),
     url: "https://example.com/research1",
-    tags: ["Deep Sea", "New Species", "Mariana Trench", "Extremophiles"]
+    tags: ["Deep Sea", "New Species", "Mariana Trench", "Amphipods"]
   },
   {
-    title: "Coral Reef Restoration Shows 40% Recovery Rate",
-    summary: "New restoration techniques using heat-resistant coral varieties demonstrate significant success in rebuilding damaged reef ecosystems.",
-    source: "Marine Biology Journal",
+    title: "Revolutionary Coral Restoration Breakthrough",
+    summary: "Marine biologists develop innovative techniques using heat-resistant coral varieties, achieving unprecedented 65% recovery rates in damaged reef ecosystems.",
+    source: "Marine Biology International",
     publishDate: new Date("2024-01-12"),
     url: "https://example.com/research2",
-    tags: ["Coral Restoration", "Climate Adaptation", "Caribbean", "Conservation"]
+    tags: ["Coral Restoration", "Climate Adaptation", "Reef Recovery", "Innovation"]
   },
   {
-    title: "Whale Migration Patterns Shift Due to Climate Change",
-    summary: "15-year tracking study reveals significant changes in humpback whale migration routes as ocean temperatures rise.",
-    source: "Oceanography Research",
+    title: "Whale Migration Routes Altered by Climate Change",
+    summary: "Comprehensive 15-year tracking study reveals dramatic shifts in humpback whale migration patterns as ocean temperatures continue to rise globally.",
+    source: "Oceanographic Research Quarterly",
     publishDate: new Date("2024-01-10"),
     url: "https://example.com/research3",
-    tags: ["Whale Migration", "Climate Change", "Marine Mammals", "Tracking"]
+    tags: ["Whale Migration", "Climate Impact", "Marine Mammals", "Ocean Warming"]
+  },
+  {
+    title: "Bioluminescent Plankton Discovery in Arctic Waters",
+    summary: "Scientists document previously unknown species of bioluminescent plankton thriving in Arctic waters, providing new insights into polar marine ecosystems.",
+    source: "Arctic Marine Research",
+    publishDate: new Date("2024-01-08"),
+    url: "https://example.com/research4",
+    tags: ["Bioluminescence", "Arctic Ocean", "Plankton", "Marine Biodiversity"]
+  },
+  {
+    title: "Microplastics Impact on Deep-Sea Food Chains",
+    summary: "Groundbreaking research reveals how microplastics are infiltrating deep-sea food webs, affecting organisms at depths previously thought to be pristine.",
+    source: "Environmental Marine Science",
+    publishDate: new Date("2024-01-05"),
+    url: "https://example.com/research5",
+    tags: ["Microplastics", "Deep Sea", "Food Chain", "Ocean Pollution"]
   }
 ];
 
