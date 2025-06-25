@@ -34,7 +34,12 @@ export default function OceanRobot() {
 
   const chatMutation = useMutation({
     mutationFn: async (message: string) => {
-      return apiRequest('POST', '/api/chat', { message, type: 'general' });
+      const response = await apiRequest('POST', '/api/chat', { message, type: 'general' });
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: 'Network error' }));
+        throw new Error(errorData.error || `HTTP ${response.status}`);
+      }
+      return response;
     },
     onSuccess: async (response) => {
       const data: ChatResponse = await response.json();
@@ -77,9 +82,15 @@ export default function OceanRobot() {
     },
     onError: (error) => {
       console.error('Chat error:', error);
+      const errorContent = error instanceof Error 
+        ? error.message.includes('API keys') 
+          ? "I need API keys to be configured. Please check that OpenAI or Gemini API keys are set up properly."
+          : `I'm having trouble right now: ${error.message}. Please try again.`
+        : "I'm having trouble processing your request. Please try again with a different question.";
+      
       const errorMessage: ChatMessage = {
         id: Date.now().toString() + '_error',
-        content: "I'm having trouble processing your request right now. Please try again with a different question about marine life.",
+        content: errorContent,
         isUser: false,
         timestamp: new Date()
       };
