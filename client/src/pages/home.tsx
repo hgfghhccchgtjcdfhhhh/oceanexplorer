@@ -94,8 +94,8 @@ export default function Home() {
               <button onClick={() => smoothScrollTo('hero')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Explore</button>
               <button onClick={() => smoothScrollTo('species')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Species</button>
               <button onClick={() => smoothScrollTo('zones')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Ocean Zones</button>
-              <button onClick={() => smoothScrollTo('conservation')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Conservation</button>
               <button onClick={() => smoothScrollTo('research')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Research</button>
+              <button onClick={() => smoothScrollTo('conservation')} className="text-gray-700 hover:text-ocean-teal font-medium transition cursor-pointer">Conservation</button>
             </nav>
 
             <div className="flex items-center space-x-4">
