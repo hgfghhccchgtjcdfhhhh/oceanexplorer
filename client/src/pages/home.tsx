@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import SpeciesCard from "@/components/species-card";
 import OceanZones from "@/components/ocean-zones";
 import OceanRobot from "@/components/ocean-robot";
@@ -195,11 +196,16 @@ export default function Home() {
           )}
 
           <div className="text-center mt-12">
+            <Link href="/species">
+              <button className="bg-ocean-teal hover:bg-ocean-deep text-white px-8 py-3 rounded-lg font-semibold transition mr-4">
+                View All Species <Fish className="inline ml-2 w-5 h-5" />
+              </button>
+            </Link>
             <button 
               onClick={() => smoothScrollTo('hero')}
-              className="bg-ocean-teal hover:bg-ocean-deep text-white px-8 py-3 rounded-lg font-semibold transition"
+              className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold transition"
             >
-              Back to Top <Fish className="inline ml-2 w-5 h-5" />
+              Back to Top
             </button>
           </div>
         </div>
@@ -251,16 +257,25 @@ export default function Home() {
                         <div className="flex items-center space-x-4 mt-2 text-xs text-gray-500">
                           <span>{new Date(paper.publishDate).toLocaleDateString()}</span>
                           <span>{paper.source}</span>
-                          <button className="text-ocean-teal hover:underline">Read Full Study</button>
+                          <a 
+                            href={paper.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-ocean-teal hover:underline"
+                          >
+                            Read Full Study
+                          </a>
                         </div>
                       </div>
                     ))}
                   </div>
                 )}
 
-                <button className="mt-6 text-ocean-teal hover:text-ocean-deep font-medium">
-                  View All Research →
-                </button>
+                <Link href="/research">
+                  <button className="mt-6 text-ocean-teal hover:text-ocean-deep font-medium">
+                    View All Research →
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -445,10 +460,10 @@ export default function Home() {
             <div>
               <h5 className="font-semibold mb-4">Resources</h5>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition">Educator Tools</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition">API Documentation</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition">Research Papers</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition">Data Downloads</a></li>
+                <li><Link href="/educator-tools"><a className="text-gray-300 hover:text-white transition">Educator Tools</a></Link></li>
+                <li><Link href="/api-docs"><a className="text-gray-300 hover:text-white transition">API Documentation</a></Link></li>
+                <li><Link href="/research"><a className="text-gray-300 hover:text-white transition">Research Papers</a></Link></li>
+                <li><a href="/api/species" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition">Data Downloads</a></li>
               </ul>
             </div>
 
